@@ -14,8 +14,8 @@ module.exports = async (v) => {
       : true
     return node.lts && cp
   }).map(it => {
-    // 除去 files, openssl, uv, zlib, v8 这些字段，其他的全部返回
-    const { files, openssl, uv, zlib, v8, ...rest } = it
+    // 除去 files, openssl, uv 这些字段，其他的全部返回
+    const { files, openssl, uv, ...rest } = it
     return { ...rest }
   })
 }
